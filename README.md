@@ -11,6 +11,12 @@
 
 **Manage Service Daily Dashboard** — A real-time monitoring dashboard that visualizes Odoo helpdesk task data across multiple partner companies with auto-rotating slideshows, interactive charts, and SLA deadline tracking.
 
+<p align="center">
+  <a href="https://youtube.com/shorts/9k9UMesK8GI">
+    <img src="https://img.shields.io/badge/▶_Demo_Video-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video">
+  </a>
+</p>
+
 ---
 
 ## ✨ Features
