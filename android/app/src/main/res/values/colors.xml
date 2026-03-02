@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand palette -->
+    <color name="primary">#1E88E5</color>
+    <color name="primary_dark">#1565C0</color>
+    <color name="primary_light">#42A5F5</color>
+    <color name="accent">#FF6F00</color>
+
+    <!-- Surfaces -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#FAFAFA</color>
+    <color name="on_background">#212121</color>
+    <color name="on_surface">#424242</color>
+
+    <!-- Status bar / nav bar -->
+    <color name="status_bar">#0D47A1</color>
+</resources>

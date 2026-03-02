@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace = 'com.msdashboard.app'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.msdashboard.app"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0.0"
+
+        // ── Dashboard URL Configuration ──
+        // Change this to your production server URL
+        buildConfigField "String", "DASHBOARD_URL", "\"http://192.168.1.12:8090\""
+        buildConfigField "String", "APP_TOKEN", "\"ms-dashboard-2026-secret\""
+    }
+
+    signingConfigs {
+        release {
+            // Uses debug keystore for now — replace with your own for Play Store
+            storeFile file("${System.getProperty('user.home')}/.android/debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
+    buildTypes {
+        debug {
+            // For local testing (10.0.2.2 = host machine from Android emulator)
+            buildConfigField "String", "DASHBOARD_URL", "\"http://192.168.1.12:8090\""
+            buildConfigField "String", "APP_TOKEN", "\"ms-dashboard-2026-secret\""
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // Same URL as debug — change to production domain when deploying
+            buildConfigField "String", "DASHBOARD_URL", "\"http://192.168.1.12:8090\""
+            buildConfigField "String", "APP_TOKEN", "\"ms-dashboard-2026-secret\""
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.9.0'
+}

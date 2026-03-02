@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Network security config — allows cleartext (HTTP) for local development.
+    In production, remove the cleartextTrafficPermitted entries and use HTTPS.
+-->
+<network-security-config>
+    <!-- Allow cleartext (HTTP) everywhere — needed for LAN dashboard access -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

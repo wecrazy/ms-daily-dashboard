@@ -1,0 +1,30 @@
+{
+    "name": "wegil/ms-daily-dashboard",
+    "description": "Daily monitoring dashboard for Odoo helpdesk/task data per partner company",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "MsDashboard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MsDashboard\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "serve": "php -S localhost:8080 -t public"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
