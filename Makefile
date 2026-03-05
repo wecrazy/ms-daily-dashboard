@@ -22,8 +22,8 @@ install: ## Install production dependencies
 dev: ## Install all dependencies (including dev)
 	composer install
 
-serve: ## Start PHP dev server on port 8090 (LAN accessible)
-	php -S 0.0.0.0:8090 -t public
+serve: ## Start PHP dev server on port 8800 (LAN accessible)
+	php -S 0.0.0.0:8800 -t public
 
 test: ## Run PHPUnit tests
 	./vendor/bin/phpunit
