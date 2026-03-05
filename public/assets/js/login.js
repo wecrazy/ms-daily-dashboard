@@ -9,11 +9,20 @@
 'use strict';
 
 async function hashString(inputString) {
-    var encoder = new TextEncoder();
-    var data    = encoder.encode(inputString);
-    var buffer  = await crypto.subtle.digest('SHA-256', data);
-    var bytes   = Array.from(new Uint8Array(buffer));
-    return bytes.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+    if (window.crypto && window.crypto.subtle) {
+        var encoder = new TextEncoder();
+        var data    = encoder.encode(inputString);
+        var buffer  = await window.crypto.subtle.digest('SHA-256', data);
+        var bytes   = Array.from(new Uint8Array(buffer));
+        return bytes.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+    } else {
+        // Fallback for old browsers and HTTP: use js-sha256
+        if (typeof sha256 !== 'undefined') {
+            return sha256(inputString);
+        } else {
+            throw new Error('SHA-256 not supported: crypto.subtle and sha256 lib missing');
+        }
+    }
 }
 
 function setCookie(name, value) {
