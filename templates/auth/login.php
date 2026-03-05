@@ -29,6 +29,7 @@
         const LOGIN_PROCESS_URL = '<?php echo ($basePath ?? '') . '/login/process'; ?>';
         const REDIRECT_URL = '<?php echo ($basePath ?? '') . '/'; ?>';
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.9.0/build/sha256.min.js"></script>
     <script src="<?php echo $basePath ?? ''; ?>/assets/js/login.js"></script>
 </body>
 </html>
