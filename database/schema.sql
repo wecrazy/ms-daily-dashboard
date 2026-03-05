@@ -1,11 +1,11 @@
 -- MS Daily Dashboard - Database Schema
 -- Auto-created by bin/db-setup.php
 
-CREATE DATABASE IF NOT EXISTS `login`
+CREATE DATABASE IF NOT EXISTS `wecrazym_dashboardms_login`
     DEFAULT CHARACTER SET utf8mb4
     COLLATE utf8mb4_general_ci;
 
-USE `login`;
+USE `wecrazym_dashboardms_login`;
 
 -- Session table
 CREATE TABLE IF NOT EXISTS `session` (
